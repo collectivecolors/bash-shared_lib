@@ -24,6 +24,22 @@ function validate_string()
 
 
 #-------------------------------------------------------------------------------
+# Validate an existing file.
+#
+# USAGE:> validate_file $FILE
+#
+function validate_file()
+{
+    if [ ! "$1" ] || [ ! -f "$1" ]
+    then
+        return 1
+    else
+        return 0
+    fi  
+}
+
+
+#-------------------------------------------------------------------------------
 # Validate an existing directory.
 #
 # USAGE:> validate_directory $DIR
