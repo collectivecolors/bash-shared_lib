@@ -2,23 +2,33 @@
 #
 # common_properties
 #
-# WARNING:  This script should be placed in /usr/local/bin and made executable.
-#           >>> IT IS USED BY OTHER SCRIPTS WHO EXPECT IT TO BE AT A SEARCHABLE LOCATION <<<
-#
-
 
 #-------------------------------------------------------------------------------
 # Shared properties
 
 
-GITHUB_ACCT='collectivecolors'
-
-PROJ_DIR="$HOME/Projects"
+PROJ_DIR="$HOME/dl"
 SCRIPT_PROJ_DIR="$PROJ_DIR/scripts"
 
+if [ ! -d "$SCRIPT_PROJ_DIR" ]
+then
+	mkdir -p "$SCRIPT_PROJ_DIR"
+fi
 
-COMMON_LIB_DIR=/usr/local/lib
-COMMON_BIN_DIR=/usr/local/bin
+COMMON_LIB_DIR="$HOME/lib"
+
+if [ ! -d "$COMMON_LIB_DIR" ]
+then
+    mkdir -p "$COMMON_LIB_DIR"
+fi
+
+COMMON_BIN_DIR="$HOME/bin"
+
+if [ ! -d "$COMMON_BIN_DIR" ]
+then
+    mkdir -p "$COMMON_BIN_DIR"
+fi
+
 
 SHARED_LIB_NAME="shared-lib"
 SHARED_LIB_DIR="$COMMON_LIB_DIR/$SHARED_LIB_NAME"
